@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <th>EmployeeName</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Edit</th>
+    <th>Delete</th> 
+  <tr class="divText" *ngIf="employeeList.length==0">
+        <td>
+            <div style="display:block">No Records Available</div>
+        </td>
+      </tr>
+<tr *ngFor="let employeeList of employeeList; let i=index">
+  <td>{{employeeList.userName}}</td>
+  <td>{{employeeList.email}}</td>
+  <td>{{employeeList.department}}</td>
+  <td><button type="button" (click)="editEmployee(i)">Edit</button></td>
+  <td><button type="button" (click)="deleteEmployee(i)">Delete</button></td>
+</tr>
+</table>
+<button type="button" (click)="addEmployee()">AddEmployee</button>

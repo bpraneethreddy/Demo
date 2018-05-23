@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="validateUserLogin(loginForm.value,loginForm.valid)" >
+        <div class="form-group">
+                <label class="control-label col-sm-3">NAME:</label>
+            <div class="col-sm-9">
+                        <input class="form-control" formControlName="userName" placeholder="userName"><br/>
+                        <small class="text-danger" *ngIf="submittedForm && loginForm.get('userName').errors">
+                                Username is required.
+                              </small>
+                     </div><br>
+                     <!-- <label class="control-label col-sm-3">Password:</label>
+                     <div class="col-sm-9">
+                            <input class="form-control" formControlName="password" placeholder="Pasword"><br/>
+                         </div> -->
+                         <label for="password-input">Password</label>
+                         <div class="ui-g-12 ui-g-nopad">
+                                <span class="ui-float-label pswrd-input">
+                                  <input id="password-input" type="{{passwordType}}" pInputText formControlName="password">
+                                  <span class="showPassword">
+                                    <i class="fa fa-eye-slash" *ngIf="passwordType==='password'" (click)="changePasswordType(true)"></i>
+                                    <i class="fa fa-eye" *ngIf="passwordType==='text'" (click)="changePasswordType(false)"></i>
+                                  </span>
+                                  <small class="text-danger" *ngIf="submittedForm && loginForm.get('password').errors">
+                                    Password is required.
+                                  </small>
+                                </span>
+                    
+                              </div>
+ <button type="submit" onclick="">Submit</button>
+ </div>
+
